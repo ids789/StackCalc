@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">StackCalc</string>
+    <string name="unit_mismatch_error">Unable: unit mismatch</string>
+    <string name="unit_conversion_error">Unable: incompatible units</string>
+</resources>
