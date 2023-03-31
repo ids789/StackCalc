@@ -5,7 +5,7 @@ An android [Reverse Polish Notation ](https://en.wikipedia.org/wiki/Reverse_Poli
 * The contents of the stack are shown as a list with controls to reorder, copy or delete items.  
 * Each value can be assigned a unit, the calculator can then do seemless unit conversions and track units throughout a calculation to ensure that the calculation is being done correctly as the result has the unit expected.  
 
-![Screenshot](/Screenshot.png)
+![Screenshot](/screenshot.png)
 
 ### Usage
 - The calculator uses standard reverse polish notation input so an operator performs its operation on the top 1 or 2 values on the stack.   
