@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="primary_operator_button" format="reference" />
+    <attr name="secondary_operator_button" format="reference" />
+    <attr name="numpad_button" format="reference" />
+    <attr name="group_unselected" format="reference" />
+    <attr name="group_selected" format="reference" />
+    <attr name="stack_control" format="reference" />
+</resources>

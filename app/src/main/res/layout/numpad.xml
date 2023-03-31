@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- ROW 1-->
+    <Button
+        android:id="@+id/number_1_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="4dp"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/number_5_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/number_2_button"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="?attr/numpad_button"
+        android:text="1" />
+    <Button
+        android:id="@+id/number_2_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="4dp"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/number_5_button"
+        app:layout_constraintLeft_toRightOf="@id/number_1_button"
+        app:layout_constraintRight_toLeftOf="@id/number_3_button"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="?attr/numpad_button"
+        android:text="2" />
+    <Button
+        android:id="@+id/number_3_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="4dp"
+        android:textSize="32sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/number_5_button"
+        app:layout_constraintLeft_toRightOf="@id/number_2_button"
+        app:layout_constraintRight_toLeftOf="@id/backspace_button"
+        android:backgroundTint="?attr/numpad_button"
+        android:text="3" />
+
+    <!-- ROW 2-->
+    <Button
+        android:id="@+id/number_4_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="4dp"
+        android:textSize="32sp"
+        app:layout_constraintTop_toBottomOf="@id/number_2_button"
+        app:layout_constraintBottom_toTopOf="@id/number_8_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/number_5_button"
+        android:backgroundTint="?attr/numpad_button"
+        android:text="4" />
+    <Button
+        android:id="@+id/number_5_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="4dp"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/number_8_button"
+        app:layout_constraintLeft_toRightOf="@id/number_4_button"
+        app:layout_constraintRight_toLeftOf="@id/number_6_button"
+        app:layout_constraintTop_toBottomOf="@id/number_2_button"
+        android:backgroundTint="?attr/numpad_button"
+        android:text="5"/>
+    <Button
+        android:id="@+id/number_6_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="4dp"
+        android:textSize="32sp"
+        app:layout_constraintTop_toBottomOf="@id/number_2_button"
+        app:layout_constraintBottom_toTopOf="@id/number_8_button"
+        app:layout_constraintLeft_toRightOf="@id/number_5_button"
+        app:layout_constraintRight_toLeftOf="@id/backspace_button"
+        android:backgroundTint="?attr/numpad_button"
+        android:text="6" />
+
+    <!-- ROW 3-->
+    <Button
+        android:id="@+id/number_7_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="4dp"
+        android:textSize="32sp"
+        app:layout_constraintTop_toBottomOf="@id/number_5_button"
+        app:layout_constraintBottom_toTopOf="@id/number_0_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/number_8_button"
+        android:backgroundTint="?attr/numpad_button"
+        android:text="7" />
+    <Button
+        android:id="@+id/number_8_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="4dp"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/number_0_button"
+        app:layout_constraintLeft_toRightOf="@id/number_7_button"
+        app:layout_constraintRight_toLeftOf="@id/number_9_button"
+        app:layout_constraintTop_toBottomOf="@id/number_5_button"
+        android:backgroundTint="?attr/numpad_button"
+        android:text="8"/>
+    <Button
+        android:id="@+id/number_9_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="4dp"
+        android:textSize="32sp"
+        app:layout_constraintTop_toBottomOf="@id/number_5_button"
+        app:layout_constraintBottom_toTopOf="@id/number_0_button"
+        app:layout_constraintLeft_toRightOf="@id/number_8_button"
+        app:layout_constraintRight_toLeftOf="@id/backspace_button"
+        android:backgroundTint="?attr/numpad_button"
+        android:text="9" />
+
+    <!-- ROW 4-->
+    <Button
+        android:id="@+id/sign_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="4dp"
+        android:textSize="32sp"
+        app:layout_constraintTop_toBottomOf="@id/number_8_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/number_0_button"
+        android:backgroundTint="?attr/numpad_button"
+        android:text="+/-" />
+    <Button
+        android:id="@+id/number_0_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="4dp"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/sign_button"
+        app:layout_constraintRight_toLeftOf="@id/decimal_button"
+        app:layout_constraintTop_toBottomOf="@id/number_8_button"
+        android:backgroundTint="?attr/numpad_button"
+        android:text="0"/>
+
+    <Button
+        android:id="@+id/decimal_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="4dp"
+        android:textSize="32sp"
+        app:layout_constraintTop_toBottomOf="@id/number_8_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/number_0_button"
+        app:layout_constraintRight_toLeftOf="@id/backspace_button"
+        android:backgroundTint="?attr/numpad_button"
+        android:text="." />
+
+    <!-- CONTROLS ROW-->
+    <ImageButton
+        android:id="@+id/backspace_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:textSize="32sp"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/clear_button"
+        app:layout_constraintLeft_toRightOf="@id/number_3_button"
+        app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint="?attr/numpad_button"
+        android:src="@drawable/ic_baseline_backspace_24"/>
+
+    <ImageButton
+        android:id="@+id/clear_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:textSize="32sp"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".3"
+        app:layout_constraintTop_toBottomOf="@id/backspace_button"
+        app:layout_constraintBottom_toTopOf="@id/accept_button"
+        app:layout_constraintLeft_toLeftOf="@id/backspace_button"
+        app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint="?attr/numpad_button"
+        android:src="@drawable/ic_baseline_delete_sweep_24"/>
+
+    <ImageButton
+        android:id="@+id/accept_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:textSize="32sp"
+        android:hapticFeedbackEnabled="true"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".4"
+        app:layout_constraintTop_toBottomOf="@id/clear_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/backspace_button"
+        app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint="?attr/numpad_button"
+        android:src="@drawable/ic_baseline_keyboard_return_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

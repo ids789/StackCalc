@@ -1,260 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/stackOutput"
-        android:layout_width="match_parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/stack_items"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/textInput"
-        android:scrollbars = "vertical"
-        android:gravity="bottom"
-        android:textSize="20pt"
-        android:lineHeight="5dp"
-        android:lineSpacingMultiplier="0.6"
-        android:text="" />
+        android:paddingLeft="15dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toTopOf="@id/input_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/delete_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:reverseLayout="true"
+        app:stackFromEnd="true" />
+
+    <ImageButton
+        android:id="@+id/settings_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="5dp"
+        android:hapticFeedbackEnabled="true"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/stack_items"
+        app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint="?attr/stack_control"
+        android:src="@drawable/ic_baseline_settings_24" />
+
+    <ImageButton
+        android:id="@+id/delete_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="5dp"
+        android:hapticFeedbackEnabled="true"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:layout_constraintBottom_toTopOf="@id/clone_button"
+        app:layout_constraintLeft_toRightOf="@id/stack_items"
+        app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint="?attr/stack_control"
+        android:src="@drawable/ic_baseline_close_24" />
+    <ImageButton
+        android:id="@+id/clone_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="5dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/stack_items"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/stack_items"
+        android:backgroundTint="?attr/stack_control"
+        android:src="@drawable/ic_baseline_content_copy_24" />
 
     <EditText
-        android:id="@+id/textInput"
+        android:id="@+id/input_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:inputType="numberSigned|number|numberDecimal"
+        android:paddingTop="0dp"
+        android:textAlignment="textEnd"
+        android:textIsSelectable="true"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@id/groups"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <include
+        android:id="@+id/groups"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/unitGrid"
-        android:gravity="end"
-        android:imeOptions="actionDone"
-        android:inputType="numberSigned|numberDecimal"
-        android:textAlignment="viewEnd"
-        android:textSize="18pt" />
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
 
-    <TableLayout
-        android:id="@+id/unitGrid"
-        android:layout_above="@id/keyGrid"
+        app:layout_constraintBottom_toTopOf="@id/operators"
+        app:layout_constraintLeft_toLeftOf="parent"
+        layout="@layout/function_groups" />
+
+    <include
+        android:id="@+id/operators"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="0dip"
-        android:layout_margin="0dip"
-        android:stretchColumns="*">
-        <TableRow
-            android:layout_height="0dp"
-            android:padding="0dip"
-            android:layout_margin="0dip">
+        android:layout_height="50dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/numpad"
+        app:layout_constraintLeft_toLeftOf="parent"
+        layout="@layout/operators" />
 
-            <Button
-                android:id="@+id/btnSwap"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:textSize="8dp"
-                android:scaleType="fitXY"
-                app:backgroundTint="@color/stack_operator"
-                android:text= "SWP" />
-            <Button
-                android:id="@+id/btnPop"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:textSize="8dp"
-                android:scaleType="fitXY"
-                app:backgroundTint="@color/stack_operator"
-                android:text="Pop" />
-            <Button
-                android:id="@+id/btnFlip"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:textSize="8dp"
-                android:scaleType="fitXY"
-                app:backgroundTint="@color/operator"
-                android:text="FLP" />
-
-        </TableRow>
-        <TableRow
-            android:layout_height="0dp"
-            android:padding="0dip"
-            android:layout_margin="0dip">
-
-            <Button
-                android:id="@+id/btnHr"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:textSize="8dp"
-                android:scaleType="fitXY"
-                app:backgroundTint="@color/time_unit"
-                android:text="Hr" />
-
-            <Button
-                android:id="@+id/btnMin"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:textSize="8dp"
-                android:scaleType="fitXY"
-                app:backgroundTint="@color/time_unit"
-                android:text="Min" />
-
-            <Button
-                android:id="@+id/btnSec"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:textSize="8dp"
-                android:scaleType="fitXY"
-                app:backgroundTint="@color/time_unit"
-                android:text="Sec" />
-
-            <Button
-                android:id="@+id/btnKg"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:textSize="8dp"
-                android:scaleType="fitXY"
-                app:backgroundTint="@color/weight_unit"
-                android:text="Kg" />
-
-
-            <Button
-                android:id="@+id/btnLb"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:textSize="8dp"
-                android:scaleType="fitXY"
-                app:backgroundTint="@color/weight_unit"
-                android:text="Lb" />
-
-            <Button
-                android:id="@+id/btnNoUnit"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:textSize="6dp"
-                android:scaleType="fitXY"
-                app:backgroundTint="@color/operator"
-                android:text="none" />
-        </TableRow>
-
-        <TableRow
-            android:layout_height="0dp"
-            android:layout_margin="0dip"
-            android:padding="0dip">
-
-            <Button
-                android:id="@+id/btnNM"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:scaleType="fitXY"
-                android:text="NM"
-                app:backgroundTint="@color/length_unit"
-                android:textSize="8dp" />
-
-            <Button
-                android:id="@+id/btnFt"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:scaleType="fitXY"
-                android:text="Ft"
-                app:backgroundTint="@color/length_unit"
-                android:textSize="8dp" />
-
-            <Button
-                android:id="@+id/btnKm"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:scaleType="fitXY"
-                android:text="Km"
-                app:backgroundTint="@color/length_unit"
-                android:textSize="8dp" />
-
-            <Button
-                android:id="@+id/btnM"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:scaleType="fitXY"
-                android:text="M"
-                app:backgroundTint="@color/length_unit"
-                android:textSize="8dp" />
-
-
-            <Button
-                android:id="@+id/btnL"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:scaleType="fitXY"
-                android:text="L"
-                app:backgroundTint="@color/volume_unit"
-                android:textSize="8dp" />
-
-            <Button
-                android:id="@+id/btnGAL"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:scaleType="fitXY"
-                android:text="GAL"
-                app:backgroundTint="@color/volume_unit"
-                android:textSize="8dp" />
-        </TableRow>
-    </TableLayout>
-    <TableLayout
-        android:id="@+id/keyGrid"
+    <include
+        android:id="@+id/numpad"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:paddingBottom="0dp"
-        android:stretchColumns="*">
-        <TableRow>
+        android:layout_height="230dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        layout="@layout/numpad" />
 
-            <Button
-                android:id="@+id/btnMultiply"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="5dp"
-                android:onClick="stackOperation"
-                android:text="*"
-                app:backgroundTint="@color/operator" />
-
-            <Button
-                android:id="@+id/btnDivide"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="5dp"
-                app:backgroundTint="@color/operator"
-                android:text="/" />
-
-            <Button
-                android:id="@+id/btnAdd"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="5dp"
-                app:backgroundTint="@color/operator"
-                android:text="+" />
-
-            <Button
-                android:id="@+id/btnSubtract"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="5dp"
-                app:backgroundTint="@color/operator"
-                android:text="-" />
-
-
-            <Button
-                android:id="@+id/btnClear"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                app:backgroundTint="@color/stack_operator"
-                android:text="C" />
-
-        </TableRow>
-    </TableLayout>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

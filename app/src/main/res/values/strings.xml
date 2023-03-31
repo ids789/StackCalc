@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">StackCalc</string>
-    <string name="unit_mismatch_error">Unable: unit mismatch</string>
+    <string name="app_name">Stack Calc</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="maths_error">Unable: illegal maths</string>
     <string name="unit_conversion_error">Unable: incompatible units</string>
+    <string name="insufficient_values_error">Unable: there are not enough values on the stack</string>
 </resources>

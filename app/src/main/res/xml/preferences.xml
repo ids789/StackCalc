@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="Calculator Settings">
+
+        <ListPreference
+            app:defaultValue="Follow System"
+            app:entries="@array/pref_theme"
+            app:entryValues="@array/pref_theme"
+            app:key="theme"
+            app:title="Theme"
+            app:useSimpleSummaryProvider="true"/>
+
+        <ListPreference
+            app:defaultValue="Degrees"
+            app:entries="@array/pref_angle"
+            app:entryValues="@array/pref_angle"
+            app:key="angle_units"
+            app:title="Angle Units"
+            app:useSimpleSummaryProvider="true"/>
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

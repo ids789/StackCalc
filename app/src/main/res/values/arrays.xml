@@ -1,0 +1,12 @@
+<resources>
+    <string-array name="pref_theme">
+        <item>Follow System</item>
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+
+    <string-array name="pref_angle">
+        <item>Degrees</item>
+        <item>Radians</item>
+    </string-array>
+</resources>
